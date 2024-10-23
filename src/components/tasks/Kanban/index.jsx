@@ -97,7 +97,9 @@ function Kanban({ tasks = [] }) {
             size={column.items.length}
             index={index}
           >
-            {column.items.map((item, index) => (
+
+
+                                  {column.items.map((item, index) => (
               <Card id={item.id} index={index} content={item.content} key={item.id}>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <div
