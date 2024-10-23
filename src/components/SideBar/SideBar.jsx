@@ -25,8 +25,8 @@ export default function SideBar({ children }) {
           <div className="border-t flex p-3">
             <img src={''} className="w-10 h-10 rounded-md" />
             <div
-              className={`flex justify-between items-center overflow-hidden transition-all ${
-                expanded ? 'w-52 ml-3' : 'w-0'
+              className={`flex justify-between items-center transition-all ${
+                expanded ? 'w-24 ml-3' : 'w-0 overflow-hidden'
               } `}
             >
               <div className="leading-4">
@@ -43,7 +43,6 @@ export default function SideBar({ children }) {
 }
 
 export function SidebarItem({ icon, text, to, alert, dropdownItems }) {
-  console.log(to)
   const { expanded } = useContext(SidebarContext)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const handleDropdownToggle = () => {
@@ -61,7 +60,7 @@ export function SidebarItem({ icon, text, to, alert, dropdownItems }) {
         }
       >
         {icon}
-        <span className={`overflow-hidden transition-all ${expanded ? 'w-52 ml-3' : 'w-0'}`}>{text}</span>
+        <span className={`transition-all ${expanded ? 'ml-3' : 'w-1 overflow-hidden'}`}>{text}</span>
 
         {!expanded && (
           <div
